@@ -17,15 +17,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 
-function generateRandomNumber() {
-  let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
-  return randomIndex;
-}
 
-
-function prompt(message) {
-  console.log(`=> ${message}`);
-}
 
 prompt("===================");
 prompt("Welcome to rock, paper, scissors, lizard, Spock");
@@ -123,4 +115,14 @@ function roundPlay(chosenOption, chosenComputerOption) {
   gameCount += 1;
   prompt(`Your Score ${playerScore}`);
   prompt(`Computer Score ${computerScore}`);
+}
+
+function generateRandomNumber() {
+  let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
+  return randomIndex;
+}
+
+
+function prompt(message) {
+  console.log(`=> ${message}`);
 }
