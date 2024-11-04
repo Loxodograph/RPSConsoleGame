@@ -4,11 +4,11 @@ const VALID_CHOICES = ['rock', 'scissors', 'paper', 'lizard', 'Spock'];
 const SHORTENED_VALID_CHOICES = ['r', 's', 'p', 'l', 'S'];
 
 const CHOICES = {
-  rock: ["scissors", "lizard"],
-  scissors: ["paper", "lizard"],
-  paper: ["rock", "Spock"],
-  lizard: ["Spock", "paper"],
-  Spock: ["rock", "scissors"],
+  r: ["scissors", "lizard"],
+  s: ["paper", "lizard"],
+  p: ["rock", "Spock"],
+  l: ["Spock", "paper"],
+  S: ["rock", "scissors"],
 }
 
 let choice;
@@ -110,13 +110,13 @@ function roundPlay(chosenOption, chosenComputerOption) {
     prompt(`Computer chose ${chosenComputerOption}`)
     prompt('Draw');
     prompt("---------");
-  } else if (CHOICES[chosenOption].includes(chosenComputerOption)) {
+  } else if (CHOICES[chosenOption.slice(0,1)].includes(chosenComputerOption)) {
     playerScore += 1;
     prompt("---------");
     prompt(`Computer chose ${chosenComputerOption}`);
     prompt('You Win!');
     prompt("---------");
-  } else if (!CHOICES[chosenOption].includes(chosenComputerOption)) {
+  } else if (!CHOICES[chosenOption.slice(0,1)].includes(chosenComputerOption)) {
     computerScore += 1;
     prompt("---------");
     prompt(`Computer chose ${chosenComputerOption}`);
