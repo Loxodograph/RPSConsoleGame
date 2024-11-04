@@ -99,29 +99,26 @@ function isValidChoice(chosenOption) {
 };
 
 function userChoicePrompt() {
+  prompt("");
+  prompt("");
   prompt('Choose one: (r)ock, (p)aper, (s)cissors, (l)izard, (S)pock');
   choice = READLINE.question();
+  prompt("");
   return choice;
 }
 
 function roundPlay(chosenOption, chosenComputerOption) {
   if (chosenOption === chosenComputerOption) {
-    prompt("---------");
     prompt(`Computer chose ${chosenComputerOption}`)
     prompt('Draw');
-    prompt("---------");
   } else if (CHOICES[chosenOption.slice(0,1)].includes(chosenComputerOption)) {
     playerScore += 1;
-    prompt("---------");
     prompt(`Computer chose ${chosenComputerOption}`);
     prompt('You Win!');
-    prompt("---------");
   } else if (!CHOICES[chosenOption.slice(0,1)].includes(chosenComputerOption)) {
     computerScore += 1;
-    prompt("---------");
     prompt(`Computer chose ${chosenComputerOption}`);
     prompt('You Lose!');
-    prompt("---------");
   }
   gameCount += 1;
   prompt(`Your Score ${playerScore}`);
