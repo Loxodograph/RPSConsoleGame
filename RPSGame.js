@@ -106,10 +106,11 @@ function userChoicePrompt() {
 }
 
 function roundPlay(chosenOption, chosenComputerOption) {
+  let choiceFirstLetter = chosenOption.slice(0, 1)
   if (chosenOption === chosenComputerOption) {
     prompt(`Computer chose ${chosenComputerOption}`)
     prompt('Draw');
-  } else if (WINNING_COMBOS[chosenOption.slice(0, 1)].includes(chosenComputerOption)) {
+  } else if (WINNING_COMBOS[choiceFirstLetter].includes(chosenComputerOption)) {
     playerScore += 1;
     prompt(`Computer chose ${chosenComputerOption}`);
     prompt('You Win!');
